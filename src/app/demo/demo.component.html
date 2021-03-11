@@ -1,0 +1,54 @@
+  <div fxLayout="column" fxFill class="overflow" > 
+    <div fxLayout="row" fxLayoutGap="32px" fxLayoutAlign="center">
+      <mat-form-field>
+        <mat-label>Entrances</mat-label>
+        <mat-select (selectionChange)="changeCardAnimation($event.value)">
+          <mat-option *ngFor="let animation of entriesAnimations" [value]="animation.value" >
+            {{ animation.name }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Exits</mat-label>
+        <mat-select (selectionChange)="changeCardAnimation($event.value)">
+          <mat-option *ngFor="let animation of exitAnimations" [value]="animation.value" >
+            {{ animation.name }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Basic</mat-label>
+        <mat-select (selectionChange)="changeCardAnimation($event.value)">
+          <mat-option *ngFor="let animation of basicAnimations" [value]="animation.value" >
+            {{ animation.name }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Text</mat-label>
+        <mat-select (selectionChange)="changeTextAnimation($event.value)">
+          <mat-option *ngFor="let animation of textAnimations" [value]="animation.value">
+            {{ animation.name }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div fxLayout="row wrap" fxFlex>
+      <div fxFlex="50" fxLayoutAlign="center" fxFlexAlign="center">
+        <mat-card expAnimation [eleAnimation]="eleAnimation" class="mat-elevation-z8">
+          <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>Shiba Inu</mat-card-title>
+          </mat-card-header>
+          <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+          <mat-card-content>
+            <p>
+              The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+            </p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+      <div fxFlex="50" fxLayoutAlign="center" fxFlexAlign="center">
+        <h1 expAnimation [textAnimation]="textAnimation">ANIMATIONS</h1>
+      </div>
+    </div>
